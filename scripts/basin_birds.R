@@ -28,6 +28,10 @@ head(out_plot)
 out_plot$index <- as.numeric(rownames(out_plot))
 out_plot$seconds <- out_plot$index/48000 # correct for hertz so output is in seconds
 
-#basic ggplot figure
+# basic ggplot figure
+# bird song is between 1.5 to 2.0
 test_plot <- ggplot(out_plot) + geom_line(aes(x = seconds, y = song))
 test_plot
+setwd("~/git.repos/signal-processing/output")
+ggsave("isolated-bird-song.pdf")
+
